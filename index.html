@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Life of a Developer — Version 2</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Loading Screen -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-box">
+      <div class="loader-terminal">
+        <span class="loader-prompt">$</span>
+        <span id="loader-text">booting developer simulation...</span>
+      </div>
+      <div class="loader-bar">
+        <div id="loader-fill" class="loader-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="progress-bar" aria-hidden="true"></div>
+  <div id="parallax-bg" aria-hidden="true"></div>
+
+  <!-- Side chapter nav -->
+  <aside class="chapter-nav" aria-label="Chapter navigation">
+    <a href="#hero" class="chapter-dot active" data-label="Hero"></a>
+    <a href="#learning" class="chapter-dot" data-label="Start"></a>
+    <a href="#debugging" class="chapter-dot" data-label="Debug"></a>
+    <a href="#deadlines" class="chapter-dot" data-label="Deadline"></a>
+    <a href="#commit-log" class="chapter-dot" data-label="Commits"></a>
+    <a href="#breakthrough" class="chapter-dot" data-label="Deploy"></a>
+    <a href="#realization" class="chapter-dot" data-label="Growth"></a>
+    <a href="#conclusion" class="chapter-dot" data-label="Final"></a>
+  </aside>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#hero" class="brand">
+        <span class="brand-mark">⌘</span>
+        <span class="brand-text">The Life of a Developer</span>
+      </a>
+
+      <nav class="topnav" aria-label="Primary navigation">
+        <a href="#learning">Start</a>
+        <a href="#debugging">Bugs</a>
+        <a href="#deadlines">Deadline</a>
+        <a href="#commit-log">Commits</a>
+        <a href="#breakthrough">Deploy</a>
+        <a href="#conclusion">Final</a>
+      </nav>
+
+      <div class="top-actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="section-shell hero-layout">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Interactive Story Experience</p>
+          <h1>The Life of a Developer</h1>
+          <p class="subtitle">From “Hello World” to “Why did this break again?”</p>
+          <p class="tagline">
+            A cinematic journey through learning, debugging, deadlines, tiny victories,
+            weird errors, and the joy of turning ideas into real things.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#learning" class="btn btn-primary">Start Journey</a>
+            <button id="hero-quote-btn" class="btn btn-secondary" type="button">Random Dev Quote</button>
+          </div>
+
+          <div class="hero-quote-box">
+            <p class="quote-label">Current developer truth</p>
+            <p id="hero-quote-text">“It works on my machine.”</p>
+          </div>
+
+          <div class="hero-stats">
+            <article class="mini-stat">
+              <span class="mini-stat-value">42</span>
+              <span class="mini-stat-label">Open tabs</span>
+            </article>
+            <article class="mini-stat">
+              <span class="mini-stat-value">∞</span>
+              <span class="mini-stat-label">Possible bugs</span>
+            </article>
+            <article class="mini-stat">
+              <span class="mini-stat-value">1%</span>
+              <span class="mini-stat-label">Calmness left</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="code-window">
+            <div class="window-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="window-title">developer-state.js</span>
+            </div>
+            <pre class="hero-code"><code id="hero-code-block">const developer = {
+  curiosity: 100,
+  coffee: 0,
+  confidence: "high",
+  bugsFound: 0,
+  sleep: "low"
+};
+
+function startJourney() {
+  return "Let's build something awesome.";
+}</code></pre>
+            <button id="copy-code-btn" class="copy-btn" type="button">Copy Code</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bottom reveal">
+        <div class="mood-panel">
+          <div class="mood-header">
+            <h3>Developer Mood Meter</h3>
+            <span id="mood-label">Hopeful</span>
+          </div>
+          <div class="meter">
+            <div id="mood-fill" class="meter-fill mood-fill"></div>
+          </div>
+        </div>
+
+        <div class="achievement-preview">
+          <h3>Achievements Unlocked</h3>
+          <div id="achievement-count">0 / 5</div>
+        </div>
+      </div>
+
+      <p class="scroll-hint">Scroll to continue ↓</p>
+    </section>
+
+    <!-- CHAPTER 1 -->
+    <section id="learning" class="story-section learning">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Chapter 1</p>
+          <h2>The First Line of Code</h2>
+          <p>
+            It starts with curiosity. A simple question becomes a new world:
+            how do websites work, how do apps think, and how do people build things out of logic?
+          </p>
+        </div>
+
+        <div class="content-grid content-grid-3 reveal">
+          <article class="card feature-card">
+            <span class="card-kicker">Structure</span>
+            <h3>HTML</h3>
+            <p>You discover tags, layout, and the skeleton of the web.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="card-kicker">Style</span>
+            <h3>CSS</h3>
+            <p>You make things beautiful, aligned, responsive, and expressive.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="card-kicker">Logic</span>
+            <h3>JavaScript</h3>
+            <p>You bring interaction, decisions, animation, and behavior into the page.</p>
+          </article>
+        </div>
+
+        <div class="story-split reveal">
+          <div class="card large-card">
+            <h3>What beginners usually feel</h3>
+            <ul class="check-list">
+              <li>Your first output feels magical.</li>
+              <li>You feel smarter than yesterday.</li>
+              <li>You realize there is still a lot more to learn.</li>
+              <li>You keep going anyway.</li>
+            </ul>
+            <p class="quote">“Every expert was once a beginner.”</p>
+          </div>
+
+          <div class="interactive-box terminal-box">
+            <div class="box-head">
+              <h3>Run First Code</h3>
+              <p>Simulate that first happy moment when something finally appears on the screen.</p>
+            </div>
+
+            <button id="run-code-btn" class="btn btn-primary" type="button">Run First Code</button>
+
+            <div id="terminal-animation" class="terminal-animation hidden" aria-live="polite">
+              <div class="terminal-bar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="terminal-content">
+                <span class="prompt">$</span>
+                <span id="terminal-text"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 2 -->
+    <section id="debugging" class="story-section debugging">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Chapter 2</p>
+          <h2>The Bug Era</h2>
+          <p>
+            This is where confidence and reality meet. You write code, run it,
+            stare at it, question it, and eventually question yourself.
+          </p>
+        </div>
+
+        <div class="story-split reveal">
+          <article class="card large-card">
+            <h3>Typical developer pain points</h3>
+            <ul class="struggle-list">
+              <li>Missing semicolons and commas</li>
+              <li>Undefined variables at the worst time</li>
+              <li>CSS refusing to align anything</li>
+              <li>Functions not firing when they should</li>
+              <li>One fix causing three new issues</li>
+            </ul>
+            <p class="highlight">The smallest error often causes the biggest panic.</p>
+          </article>
+
+          <div class="interactive-box">
+            <div class="box-head">
+              <h3>Bug Hunt</h3>
+              <p>Click all bugs, then fix the system.</p>
+            </div>
+
+            <div class="bug-zone">
+              <button class="bug" type="button" aria-label="Bug 1">🐞</button>
+              <button class="bug" type="button" aria-label="Bug 2">🐛</button>
+              <button class="bug" type="button" aria-label="Bug 3">🕷️</button>
+              <button class="bug" type="button" aria-label="Bug 4">🪲</button>
+              <button class="bug" type="button" aria-label="Bug 5">🐜</button>
+            </div>
+
+            <div class="bug-status">
+              <span>Found: <strong id="bugs-found-count">0</strong>/5</span>
+            </div>
+
+            <button id="fix-error-btn" class="btn btn-secondary" type="button">Fix Error</button>
+            <div id="fix-animation" class="status-banner hidden" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="quote-banner reveal">
+          “Debugging is like being the detective in a crime movie where you are also the criminal.”
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 3 -->
+    <section id="deadlines" class="story-section deadlines">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Chapter 3</p>
+          <h2>Deadline Is Tomorrow</h2>
+          <p>
+            Time speeds up, coffee becomes essential, and every small task suddenly feels very important.
+          </p>
+        </div>
+
+        <div class="content-grid content-grid-2 reveal">
+          <article class="card large-card">
+            <h3>Internal dialogue</h3>
+            <div class="mini-quotes">
+              <blockquote>“I’ll just change one last thing.”</blockquote>
+              <blockquote>“Why is it already 4 AM?”</blockquote>
+              <blockquote>“This was definitely working before.”</blockquote>
+            </div>
+
+            <div class="stats">
+              <p>⏳ Sleep: 2 hours</p>
+              <p>💻 Coding: 12 hours</p>
+              <p>😵 Stress: 100%</p>
+              <p>🧠 Focus: unstable but alive</p>
+            </div>
+          </article>
+
+          <article class="card large-card">
+            <h3>Deadline Dashboard</h3>
+
+            <div class="coffee-counter">
+              <span>☕ Coffee Energy:</span>
+              <strong id="coffee-count">0</strong>
+            </div>
+
+            <div class="coffee-actions">
+              <button id="add-coffee-btn" class="btn btn-primary" type="button">+ Drink Coffee</button>
+              <button id="reset-coffee-btn" class="btn btn-ghost" type="button">Reset</button>
+            </div>
+
+            <div class="meter-wrap">
+              <div class="meter-label-row">
+                <span>Energy Meter</span>
+                <span id="energy-level-text">Low</span>
+              </div>
+              <div class="meter">
+                <div id="energy-fill" class="meter-fill energy-fill"></div>
+              </div>
+            </div>
+
+            <div class="speed-typing">
+              <span id="typing-text"></span>
+            </div>
+
+            <div class="countdown">
+              Deadline in: <span id="timer">00:45</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMIT LOG -->
+    <section id="commit-log" class="story-section roadmap">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Extra Chapter</p>
+          <h2>Fake Commit History</h2>
+          <p>
+            Every project has a story behind the scenes. Commits capture panic, progress, confusion, and hope.
+          </p>
+        </div>
+
+        <div class="commit-list reveal">
+          <article class="commit-item">
+            <span class="commit-tag">feat</span>
+            <div>
+              <h3>Initial layout added</h3>
+              <p>Built hero section and first chapter structure.</p>
+            </div>
+          </article>
+          <article class="commit-item">
+            <span class="commit-tag bug">fix</span>
+            <div>
+              <h3>Fixed broken button event</h3>
+              <p>Spent 40 minutes debugging one typo.</p>
+            </div>
+          </article>
+          <article class="commit-item">
+            <span class="commit-tag refactor">refactor</span>
+            <div>
+              <h3>Cleaned theme logic</h3>
+              <p>Removed inconsistent state handling and simplified toggles.</p>
+            </div>
+          </article>
+          <article class="commit-item">
+            <span class="commit-tag chore">chore</span>
+            <div>
+              <h3>Updated content and layout polish</h3>
+              <p>Made the page feel less empty and more alive.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BREAKTHROUGH -->
+    <section id="breakthrough" class="story-section breakthrough">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Chapter 4</p>
+          <h2>It Finally Works</h2>
+          <p>
+            Then comes the moment every developer waits for: the code runs, the UI behaves,
+            and the final output looks exactly how it was meant to.
+          </p>
+        </div>
+
+        <div class="story-split reveal">
+          <article class="card large-card">
+            <h3>Victory checklist</h3>
+            <div class="success-points">
+              <p>✔ No critical bugs left</p>
+              <p>✔ Smooth UI interactions</p>
+              <p>✔ Working responsive layout</p>
+              <p>✔ Build ready for deployment</p>
+            </div>
+            <p class="quote">“That one success moment heals many hours of pain.”</p>
+          </article>
+
+          <div class="interactive-box">
+            <div class="box-head">
+              <h3>Deploy Project</h3>
+              <p>Run the final release and celebrate your victory.</p>
+            </div>
+
+            <button id="deploy-btn" class="btn btn-primary" type="button">Deploy Project</button>
+
+            <div id="confetti" class="hidden" aria-hidden="true">🎉 ✨ 🚀 🎊 ✨</div>
+            <div id="deploy-success" class="status-banner success hidden" aria-live="polite">
+              🚀 Successfully Deployed!
+            </div>
+
+            <div id="deploy-log" class="deploy-log">
+              <p>Waiting for deployment...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 5 -->
+    <section id="realization" class="story-section realization">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Chapter 5</p>
+          <h2>The Cycle Continues</h2>
+          <p>
+            Just when you feel comfortable, a new framework, tool, library, or concept arrives.
+            The best developers stay learners.
+          </p>
+        </div>
+
+        <div class="content-grid content-grid-4 reveal">
+          <article class="card skill-card">
+            <h3>React</h3>
+            <p>Component thinking and modern UI architecture.</p>
+          </article>
+          <article class="card skill-card">
+            <h3>AI</h3>
+            <p>Smarter workflows, assistants, and new app ideas.</p>
+          </article>
+          <article class="card skill-card">
+            <h3>Next.js</h3>
+            <p>Routing, server features, deployment, and performance.</p>
+          </article>
+          <article class="card skill-card">
+            <h3>Cybersecurity</h3>
+            <p>Protecting systems, users, and data from real threats.</p>
+          </article>
+        </div>
+
+        <div class="timeline reveal">
+          <article class="timeline-item">
+            <span class="timeline-step">01</span>
+            <div>
+              <h3>Learn</h3>
+              <p>Start with curiosity and ambition.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-step">02</span>
+            <div>
+              <h3>Break</h3>
+              <p>Meet confusion and resistance.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-step">03</span>
+            <div>
+              <h3>Fix</h3>
+              <p>Search, test, retry, improve.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-step">04</span>
+            <div>
+              <h3>Grow</h3>
+              <p>Become stronger with every project.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="story-section achievements-section">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Unlocks</p>
+          <h2>Achievement Board</h2>
+          <p>
+            This section tracks the actions you complete while exploring the experience.
+          </p>
+        </div>
+
+        <div id="achievement-grid" class="content-grid content-grid-3 reveal">
+          <article class="card achievement-card locked" data-achievement="first-code">
+            <h3>First Output</h3>
+            <p>Run your first code in the terminal.</p>
+          </article>
+          <article class="card achievement-card locked" data-achievement="bug-hunter">
+            <h3>Bug Hunter</h3>
+            <p>Find every bug in the bug hunt.</p>
+          </article>
+          <article class="card achievement-card locked" data-achievement="caffeine-core">
+            <h3>Caffeine Core</h3>
+            <p>Drink enough coffee to power through the night.</p>
+          </article>
+          <article class="card achievement-card locked" data-achievement="deployer">
+            <h3>Ship It</h3>
+            <p>Deploy the project successfully.</p>
+          </article>
+          <article class="card achievement-card locked" data-achievement="collector">
+            <h3>Explorer</h3>
+            <p>Interact with multiple features across the page.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section id="conclusion" class="story-section conclusion">
+      <div class="section-shell">
+        <div class="section-intro reveal">
+          <p class="eyebrow">Final Chapter</p>
+          <h2>Why We Still Love It</h2>
+          <p>
+            Because building is powerful. Because problem solving is addictive.
+            Because creating something useful from nothing is still one of the best feelings in the world.
+          </p>
+        </div>
+
+        <div class="content-grid content-grid-3 reveal">
+          <article class="card">
+            <h3>Creativity</h3>
+            <p>You turn thoughts into real experiences.</p>
+          </article>
+          <article class="card">
+            <h3>Problem Solving</h3>
+            <p>You learn to think clearly under pressure.</p>
+          </article>
+          <article class="card">
+            <h3>Growth</h3>
+            <p>Every bug fixed becomes part of your skill.</p>
+          </article>
+        </div>
+
+        <p class="closing-line reveal">Eat. Sleep. Code. Repeat.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <p>Built for learners, builders, debuggers, and dreamers.</p>
+      <a href="#hero" class="back-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="src/main.js" defer></script>
+</body>
+</html>
