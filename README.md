@@ -28,7 +28,7 @@ Touch devices ✅
 Keyboard navigation ✅
 
 🚀 Live Demo
-[Deployed on Netlify/Vercel/GitHub Pages] (add your link here)
+[Deployed on GitHub Pages] (https://swati3479.github.io/Frontend_Odyssey/)
 
 🛠️ Tech Stack
 text
